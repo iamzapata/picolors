@@ -45,8 +45,10 @@
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
+    "color": "^3.1.2",
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
+    "react-color": "^2.17.3",
     "react-dom": "^16.5.1"
   }
 }

@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react"
 import { number } from "prop-types"
 import piDecimals from "utils/piMillionDecimals"
-import colorMap from "utils/colorMap"
 
 class Canvas extends PureComponent {
   constructor(props) {
@@ -10,6 +9,7 @@ class Canvas extends PureComponent {
   }
 
   componentDidMount() {
+    const { colorMap } = this.props
     window.pi = piDecimals
     const canvas = this.canvas
     const context = canvas.current.getContext("2d")
