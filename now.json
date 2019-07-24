@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "drawpi",
+  "alias": "drawpi.azapata.io",
+  "builds": [
+      { "src": "client/**", "use": "@now/static" }
+  ]
+}
