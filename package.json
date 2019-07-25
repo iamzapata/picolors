@@ -10,7 +10,7 @@
     "lint:fix": "eslint . --ext .js,.jsx --fix",
     "dev": "webpack-dev-server --mode=development --open --hot",
     "build": "NODE_ENV=production webpack --mode=production",
-    "deploy": "yarn build && now --target staging"
+    "deploy": "yarn build && now --target production"
   },
   "devDependencies": {
     "@babel/core": "^7.0.1",
