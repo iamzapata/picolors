@@ -35,9 +35,10 @@ class Canvas extends PureComponent {
       for (let col = 0; col < canvasWidth; col++) {
         const index = (col + row * imageData.width) * 4
         const piDecimal = piDecimalDigits[piDecimalPosition]
-        imagePixels[index] = colorMap[piDecimal].r
-        imagePixels[index + 1] = colorMap[piDecimal].g
-        imagePixels[index + 2] = colorMap[piDecimal].b
+        const { r, g, b } = colorMap[piDecimal]
+        imagePixels[index] = r
+        imagePixels[index + 1] = g
+        imagePixels[index + 2] = b
         imagePixels[index + 3] = 255
         piDecimalPosition++
       }

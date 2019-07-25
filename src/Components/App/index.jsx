@@ -8,8 +8,8 @@ import { pastel, regular } from "utils/colorMap"
 
 class App extends Component {
   state = {
-    colorPalettes: [pastel, regular],
-    currentPalette: pastel
+    colorPalettes: [regular, pastel],
+    currentPalette: regular
   }
 
   handleColorChange = (index, color) => {
@@ -49,17 +49,19 @@ class App extends Component {
     return (
       <div className="App">
         <Canvas width={1000} height={1000} colorMap={selectedPaletteColors} />
-        <div className="d-flex">
+        <div className="d-flex w-25" style={{ justifyContent: "space-evenly" }}>
           {colorPalettes.map(palette => (
-            <div key={palette.type} className="d-flex flex-column mr-3">
-              <div>
-                <input
-                  className="form-control"
-                  type="radio"
-                  checked={currentPalette.type === palette.type}
-                  onChange={this.handlePaletteSelectChange(palette)}
-                />
-              </div>
+            <div
+              key={palette.type}
+              className="d-flex flex-column mr-3 align-items-center justify-content-center"
+            >
+              <input
+                style={{ height: "30px", width: "30px" }}
+                className="form-control ml-2"
+                type="radio"
+                checked={currentPalette.type === palette.type}
+                onChange={this.handlePaletteSelectChange(palette)}
+              />
               {Object.values(palette.colors).map((rgb, index) => (
                 <ColorSelector
                   rgb={rgb}
@@ -69,6 +71,7 @@ class App extends Component {
                   enabled={currentPalette.type === palette.type}
                 />
               ))}
+              <label className="label text-capitalize">{palette.type}</label>
             </div>
           ))}
         </div>
