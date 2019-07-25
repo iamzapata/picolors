@@ -9,6 +9,14 @@ class Canvas extends PureComponent {
   }
 
   componentDidMount() {
+    this.drawScreen()
+  }
+
+  componentDidUpdate() {
+    this.drawScreen()
+  }
+
+  drawScreen = () => {
     const { colorMap } = this.props
     window.pi = piDecimals
     const canvas = this.canvas

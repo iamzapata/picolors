@@ -1,14 +1,42 @@
-const colorMap = {
-  "0": { r: 128, g: 128, b: 255 },
-  "1": { r: 255, g: 0, b: 255 },
-  "2": { r: 128, g: 0, b: 255 },
-  "3": { r: 0, g: 128, b: 255 },
-  "4": { r: 0, g: 255, b: 255 },
-  "5": { r: 255, g: 255, b: 0 },
-  "6": { r: 100, g: 255, b: 0 },
-  "7": { r: 0, g: 0, b: 0 },
-  "8": { r: 70, g: 255, b: 70 },
-  "9": { r: 255, g: 0, b: 0 }
+const Color = require("color")
+
+const pastelizeColor = color => {
+  const colorConstructor = Color(color)
+  const [h, s, l] = Color(colorConstructor).hsl().color
+  const pastelSaturation = s < 25 ? 25 : s > 70 ? 70 : s
+  const pasteLightness = l < 85 ? 85 : s > 95 ? 95 : s
+
+  const pastelColorString = `hsl(${h}, ${pastelSaturation}%, ${pasteLightness}%)`
+
+  const [r, g, b] = Color(pastelColorString).rgb().color
+
+  return { r, g, b }
 }
 
-export default colorMap
+const colors = [
+  "blue",
+  "red",
+  "purple",
+  "pink",
+  "green",
+  "black",
+  "orange",
+  "yellow",
+  "cyan",
+  "silver"
+].map(color => {
+  const [r, g, b] = Color(color).rgb().color
+  return {
+    r,
+    g,
+    b
+  }
+})
+
+const pastelColors = colors.map(color => pastelizeColor(color))
+
+const pastel = Object.assign({ type: "pastel" }, { colors: pastelColors })
+
+const regular = Object.assign({ type: "regular" }, { colors: colors })
+
+export { pastel, regular }
