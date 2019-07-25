@@ -18,9 +18,9 @@ class App extends Component {
     const newPalettes = colorPalettes.map(palette => {
       if (palette.type === currentPalette.type) {
         return {
-          ...currentPalette,
+          ...palette,
           colors: {
-            ...currentPalette.colors,
+            ...palette.colors,
             [index]: color
           }
         }
@@ -55,6 +55,7 @@ class App extends Component {
               key={palette.type}
               className="d-flex flex-column mr-3 align-items-center justify-content-center"
             >
+              <h4 className="">{palette.type}</h4>
               <input
                 style={{ height: "30px", width: "30px" }}
                 className="form-control ml-2"
@@ -71,7 +72,6 @@ class App extends Component {
                   enabled={currentPalette.type === palette.type}
                 />
               ))}
-              <label className="label text-capitalize">{palette.type}</label>
             </div>
           ))}
         </div>

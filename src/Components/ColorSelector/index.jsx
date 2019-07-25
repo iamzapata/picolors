@@ -1,7 +1,10 @@
 import React, { Component } from "react"
 import { ChromePicker } from "react-color"
+import piDecimals from "utils/piMillionDecimals"
 
 const Color = require("color")
+
+const count = (str, ch) => (str.match(new RegExp(ch, "g")) || []).length
 
 class ColorSelector extends Component {
   state = {
@@ -44,16 +47,18 @@ class ColorSelector extends Component {
     }
 
     return (
-      <div className="position-relative">
+      <div className="position-relative d-flex flex-column align-items-center">
         <button
+          className={`btn rounded-circle m-1 p-1 d-flex align-items-center justify-content-center position-relative ${backgroundColor ===
+            "#FFFFFF" && "border border-dark"}`}
           id={`color-${index}`}
-          onClick={this.handleClick(index)}
-          className="btn rounded-circle m-1 p-1 d-flex align-items-center justify-content-center"
           style={{ backgroundColor, color, height: "30px", width: "30px" }}
           disabled={!enabled}
+          onClick={this.handleClick(index)}
         >
           {index}
         </button>
+        <span className="">{count(piDecimals, index)}</span>
         {activeItemIndex === index && (
           <div className="position-absolute" style={popover}>
             <div style={cover} onClick={this.handleClose} />
