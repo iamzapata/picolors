@@ -58,7 +58,11 @@ class ColorSelector extends Component {
         >
           {index}
         </button>
-        <span className="">{count(piDecimals, index)}</span>
+        <span className="">
+          {new Intl.NumberFormat("en-US", {
+            maximumSignificantDigits: 8
+          }).format(count(piDecimals, index))}
+        </span>
         {activeItemIndex === index && (
           <div className="position-absolute" style={popover}>
             <div style={cover} onClick={this.handleClose} />
