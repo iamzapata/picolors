@@ -9,7 +9,7 @@ const Header = ({}) => {
     <div>
       <h3 className="text-center">{digitLength} Digits of Pi</h3>
       <p className="text-center">
-        First {digitLength} fractioanl digits of the number Pi, using color
+        First {digitLength} fractional digits of the number Pi, using color
         coded digits 0 through 9.
       </p>
     </div>

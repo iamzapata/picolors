@@ -1,12 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { ChromePicker } from "react-color"
 
 const Color = require("color")
 
-let currentResetOption = 0
+import classNames from "classnames"
 
 const ColorSelector = ({ handleChange, rgb, index, originalColor }) => {
   const [activeItemIndex, setActiveItemIndex] = useState(null)
+  const activeColorOption = useRef(0)
 
   const backgroundColor = Color(rgb).hex()
   const color = Color(rgb).isDark() ? "white" : "black"
@@ -33,11 +34,16 @@ const ColorSelector = ({ handleChange, rgb, index, originalColor }) => {
     return (event) => {
       // shift + click to cycle between white, black and original color
       if (event.shiftKey) {
-        handleColorChange(colorOptions[currentResetOption], index)
-        currentResetOption += 1
-        if (currentResetOption === colorOptions.length) currentResetOption = 0
+        handleColorChange(colorOptions[activeColorOption.current], index)
+
+        activeColorOption.current += 1
+        if (activeColorOption.current === colorOptions.length) {
+          activeColorOption.current = 0
+        }
+
         return
       }
+
       setActiveItemIndex(index)
     }
   }
@@ -54,9 +60,10 @@ const ColorSelector = ({ handleChange, rgb, index, originalColor }) => {
   return (
     <div className="ColorSelector position-relative d-flex flex-column align-items-center">
       <button
-        className={`btn rounded-circle m-1 p-1 d-flex align-items-center justify-content-center position-relative ${
+        className={classNames(
+          "btn m-1 p-1 d-flex align-items-center justify-content-center position-relative",
           backgroundColor === "#FFFFFF" && "border border-dark"
-        }`}
+        )}
         id={`color-${index}`}
         style={{ backgroundColor, color, height: "30px", width: "30px" }}
         onClick={handleClick(index)}
