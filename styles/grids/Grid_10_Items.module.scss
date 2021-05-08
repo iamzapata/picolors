@@ -1,0 +1,14 @@
+.Grid_3_3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 0.3rem;
+
+  & > div {
+    width: 60px;
+  }
+
+  & > div:last-child {
+    grid-column: 2;
+  }
+}
