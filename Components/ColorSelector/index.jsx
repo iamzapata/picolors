@@ -1,14 +1,21 @@
 import React, { useState } from "react"
 import { ChromePicker } from "react-color"
-import piDecimals from "utils/piMillionDecimals"
 
 const Color = require("color")
 
-const ColorSelector = ({ handleChange, rgb, index }) => {
+let currentResetOption = 0
+
+const ColorSelector = ({ handleChange, rgb, index, originalColor }) => {
   const [activeItemIndex, setActiveItemIndex] = useState(null)
 
   const backgroundColor = Color(rgb).hex()
   const color = Color(rgb).isDark() ? "white" : "black"
+
+  const colorOptions = [
+    { rgb: { r: 255, g: 255, b: 255 } },
+    { rgb: { r: 0, g: 0, b: 0 } },
+    { rgb: originalColor },
+  ]
 
   const popover = {
     position: "absolute",
@@ -22,15 +29,22 @@ const ColorSelector = ({ handleChange, rgb, index }) => {
     left: "0px",
   }
 
-  const handleClick = (newActiveItemIndex) => {
-    return () => {
-      setActiveItemIndex(newActiveItemIndex)
+  const handleClick = (index) => {
+    return (event) => {
+      // shift + click to cycle between white, black and original color
+      if (event.shiftKey) {
+        handleColorChange(colorOptions[currentResetOption], index)
+        currentResetOption += 1
+        if (currentResetOption === colorOptions.length) currentResetOption = 0
+        return
+      }
+      setActiveItemIndex(index)
     }
   }
 
-  const handleColorChange = (color) => {
+  const handleColorChange = (color, index = activeItemIndex) => {
     delete color.rgb.a
-    handleChange(activeItemIndex, color.rgb)
+    handleChange(index, color.rgb)
   }
 
   const handleClose = () => {
@@ -53,7 +67,11 @@ const ColorSelector = ({ handleChange, rgb, index }) => {
       {activeItemIndex === index && (
         <div className="position-absolute" style={popover}>
           <div style={cover} onClick={handleClose} />
-          <ChromePicker onChange={handleColorChange} color={backgroundColor} />
+          <ChromePicker
+            onChange={handleColorChange}
+            color={backgroundColor}
+            disableAlpha
+          />
         </div>
       )}
     </div>

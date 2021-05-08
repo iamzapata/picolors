@@ -11,8 +11,11 @@ import GridStyles from "styles/grids/Grid_10_Items.module.scss"
 import { regular, grey, brown, pastel } from "utils/colorMap"
 
 const App = () => {
-  const [currentPalette, setCurrentPalette] = useState(regular)
   const colorPalettes = [regular, grey, brown, pastel]
+  const [currentPalette, setCurrentPalette] = useState(regular)
+  const originalPaletteColors = colorPalettes.find(
+    (palette) => palette.type === currentPalette.type
+  ).colors
   const selectedPaletteColors = currentPalette.colors
 
   const handleColorChange = (index, color) => {
@@ -51,6 +54,7 @@ const App = () => {
               key={index}
               rgb={rgb}
               index={index}
+              originalColor={originalPaletteColors[index]}
               handleChange={handleColorChange}
             />
           ))}
