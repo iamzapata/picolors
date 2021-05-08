@@ -60,11 +60,11 @@ const ColorSelector = ({ handleChange, rgb, index, originalColor }) => {
   return (
     <div className="ColorSelector position-relative d-flex flex-column align-items-center">
       <button
+        id={`color-${index}`}
         className={classNames(
           "btn m-1 p-1 d-flex align-items-center justify-content-center position-relative",
           backgroundColor === "#FFFFFF" && "border border-dark"
         )}
-        id={`color-${index}`}
         style={{ backgroundColor, color, height: "30px", width: "30px" }}
         onClick={handleClick(index)}
       >
