@@ -1,7 +1,7 @@
 import React from "react"
 import piDecimals from "utils/piMillionDecimals"
 import GridStyles from "styles/grids/Grid_10_Items.module.scss"
-import Styles from "./PiDigitCount.module.css"
+import Styles from "Components/PiDigitCount/PiDigitCount.module.css"
 
 import classNames from "classnames"
 
