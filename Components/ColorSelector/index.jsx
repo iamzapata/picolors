@@ -13,9 +13,9 @@ const ColorSelector = ({ handleChange, rgb, index, originalColor }) => {
   const color = Color(rgb).isDark() ? "white" : "black"
 
   const colorOptions = [
-    { rgb: { r: 255, g: 255, b: 255 } },
-    { rgb: { r: 0, g: 0, b: 0 } },
-    { rgb: originalColor },
+    { r: 255, g: 255, b: 255 },
+    { r: 0, g: 0, b: 0 },
+    originalColor,
   ]
 
   const popover = {
@@ -34,7 +34,7 @@ const ColorSelector = ({ handleChange, rgb, index, originalColor }) => {
     return (event) => {
       // shift + click to cycle between white, black and original color
       if (event.shiftKey) {
-        handleColorChange(colorOptions[activeColorOption.current], index)
+        handleChange(index, colorOptions[activeColorOption.current])
 
         activeColorOption.current += 1
         if (activeColorOption.current === colorOptions.length) {
@@ -48,9 +48,9 @@ const ColorSelector = ({ handleChange, rgb, index, originalColor }) => {
     }
   }
 
-  const handleColorChange = (color, index = activeItemIndex) => {
+  const handleColorChange = (color) => {
     delete color.rgb.a
-    handleChange(index, color.rgb)
+    handleChange(activeItemIndex, color.rgb)
   }
 
   const handleClose = () => {

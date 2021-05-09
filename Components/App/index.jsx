@@ -39,7 +39,7 @@ const App = () => {
 
       <div>
         <Header />
-        <Canvas width={800} height={800} colorMap={selectedPaletteColors} />
+        <Canvas width={1000} height={1000} colorMap={selectedPaletteColors} />
       </div>
 
       <div className="m-3">
