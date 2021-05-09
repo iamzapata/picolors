@@ -1,6 +1,10 @@
 import rgbTransform from './index'
 
 describe('rgbTransform', () => {
+  it('shows exception if invalid color is pased in', () => {
+    expect(() => rgbTransform('')).toThrow('Unable to parse color from string')
+  })
+
   it('returns an object with r, g and b properties set to corresponding 0-255 values', () => {
     expect(rgbTransform('black')).toEqual({ r: 0, g: 0, b: 0 })
     expect(rgbTransform('red')).toEqual({ r: 255, g: 0, b: 0 })
