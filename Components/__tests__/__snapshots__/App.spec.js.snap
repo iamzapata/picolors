@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders 1`] = `
+<div>
+  <div
+    class="App d-flex"
+  >
+    <div>
+      PiDigitCount
+    </div>
+    <div>
+      <div>
+        Canvas
+      </div>
+      <canvas
+        height="1000"
+        width="1000"
+      />
+    </div>
+    <div
+      class="m-3"
+    >
+      <div>
+        PaletteSelector
+      </div>
+      <div>
+        <div>
+          ColorSelector
+        </div>
+        <div>
+          ColorSelector
+        </div>
+        <div>
+          ColorSelector
+        </div>
+        <div>
+          ColorSelector
+        </div>
+        <div>
+          ColorSelector
+        </div>
+        <div>
+          ColorSelector
+        </div>
+        <div>
+          ColorSelector
+        </div>
+        <div>
+          ColorSelector
+        </div>
+        <div>
+          ColorSelector
+        </div>
+        <div>
+          ColorSelector
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
