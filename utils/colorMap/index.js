@@ -71,4 +71,4 @@ const brown = Object.assign({ type: 'brown' }, { colors: brownColors })
 
 const pastel = Object.assign({ type: 'pastel' }, { colors: pastelColors })
 
-export { regular, grey, brown, pastel }
+export { brown, grey, pastel, regular }
