@@ -1,13 +1,6 @@
 const Color = require('color')
 
-const rgbTransform = (color) => {
-  const [r, g, b] = Color(color).rgb().color
-  return {
-    r,
-    g,
-    b
-  }
-}
+import rgbTransform from 'utils/rgbTransform'
 
 const pastelizeColor = (color) => {
   const colorConstructor = Color(color)
@@ -32,7 +25,7 @@ const colors = [
   'orange',
   'yellow',
   'cyan',
-  'silver'
+  'silver',
 ].map(rgbTransform)
 
 const greyColors = [
@@ -45,7 +38,7 @@ const greyColors = [
   'lightslategray',
   'slategray',
   'darkslategray',
-  'black'
+  'black',
 ].map(rgbTransform)
 
 const brownColors = [
@@ -58,7 +51,7 @@ const brownColors = [
   'saddlebrown',
   'sienna',
   'brown',
-  'maroon'
+  'maroon',
 ].map(rgbTransform)
 
 const pastelColors = colors.map((color) => pastelizeColor(color))
