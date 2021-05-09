@@ -1,9 +1,9 @@
-import React from "react"
-import piDecimals from "utils/piMillionDecimals"
-import GridStyles from "styles/grids/Grid_10_Items.module.scss"
-import Styles from "Components/PiDigitCount/PiDigitCount.module.css"
+import React from 'react'
+import { charOcurrenceCount, piDecimals } from 'utils'
+import GridStyles from 'styles/grids/Grid_10_Items.module.scss'
+import Styles from 'Components/PiDigitCount/PiDigitCount.module.css'
 
-import classNames from "classnames"
+import classNames from 'classnames'
 
 const PiDigitCount = () => (
   <div className="m-3">
@@ -15,9 +15,9 @@ const PiDigitCount = () => (
             <div className="fw-bold text-center">{index}</div>
 
             <span key={index} className="small text-center">
-              {new Intl.NumberFormat("en-US", {
+              {new Intl.NumberFormat('en-US', {
                 maximumSignificantDigits: 8,
-              }).format(count(piDecimals, index))}
+              }).format(charOcurrenceCount(piDecimals, index))}
             </span>
           </div>
         )
