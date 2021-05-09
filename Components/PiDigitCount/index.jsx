@@ -5,8 +5,6 @@ import Styles from "Components/PiDigitCount/PiDigitCount.module.css"
 
 import classNames from "classnames"
 
-const count = (str, ch) => (str.match(new RegExp(ch, "g")) || []).length
-
 const PiDigitCount = () => (
   <div className="m-3">
     <h6 className="text-center mb-1">Ocurrences</h6>
