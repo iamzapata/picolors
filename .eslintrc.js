@@ -1,5 +1,4 @@
 module.exports = {
-  presets: ['next/babel'],
   plugins: ['simple-import-sort'],
   root: true, // Make sure eslint picks up the config at the root of the directory
   parserOptions: {
