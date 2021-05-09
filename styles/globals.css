@@ -20,3 +20,8 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+canvas {
+  height: 900px;
+  width: 900px;
+}
