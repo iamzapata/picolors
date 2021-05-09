@@ -1,11 +1,11 @@
-const Color = require("color")
+const Color = require('color')
 
 const rgbTransform = (color) => {
   const [r, g, b] = Color(color).rgb().color
   return {
     r,
     g,
-    b,
+    b
   }
 }
 
@@ -23,52 +23,52 @@ const pastelizeColor = (color) => {
 }
 
 const colors = [
-  "blue",
-  "red",
-  "purple",
-  "pink",
-  "green",
-  "black",
-  "orange",
-  "yellow",
-  "cyan",
-  "silver",
+  'blue',
+  'red',
+  'purple',
+  'pink',
+  'green',
+  'black',
+  'orange',
+  'yellow',
+  'cyan',
+  'silver'
 ].map(rgbTransform)
 
 const greyColors = [
-  "gainsboro",
-  "lightgray",
-  "silver",
-  "darkgray",
-  "dimgray",
-  "lightgray",
-  "lightslategray",
-  "slategray",
-  "darkslategray",
-  "black",
+  'gainsboro',
+  'lightgray',
+  'silver',
+  'darkgray',
+  'dimgray',
+  'lightgray',
+  'lightslategray',
+  'slategray',
+  'darkslategray',
+  'black'
 ].map(rgbTransform)
 
 const brownColors = [
-  "sandybrown",
-  "goldenrod",
-  "darkgoldenrod",
-  "peru",
-  "chocolate",
-  "olive",
-  "saddlebrown",
-  "sienna",
-  "brown",
-  "maroon",
+  'sandybrown',
+  'goldenrod',
+  'darkgoldenrod',
+  'peru',
+  'chocolate',
+  'olive',
+  'saddlebrown',
+  'sienna',
+  'brown',
+  'maroon'
 ].map(rgbTransform)
 
 const pastelColors = colors.map((color) => pastelizeColor(color))
 
-const regular = Object.assign({ type: "regular" }, { colors: colors })
+const regular = Object.assign({ type: 'regular' }, { colors: colors })
 
-const grey = Object.assign({ type: "gray" }, { colors: greyColors })
+const grey = Object.assign({ type: 'gray' }, { colors: greyColors })
 
-const brown = Object.assign({ type: "brown" }, { colors: brownColors })
+const brown = Object.assign({ type: 'brown' }, { colors: brownColors })
 
-const pastel = Object.assign({ type: "pastel" }, { colors: pastelColors })
+const pastel = Object.assign({ type: 'pastel' }, { colors: pastelColors })
 
 export { regular, grey, brown, pastel }

@@ -1,5 +1,6 @@
-import Head from "next/head";
-import App from "Components/App";
+import React from 'react'
+import Head from 'next/head'
+import App from 'Components/App'
 
 export default function Home() {
   return (
@@ -11,5 +12,5 @@ export default function Home() {
 
       <App />
     </div>
-  );
+  )
 }
