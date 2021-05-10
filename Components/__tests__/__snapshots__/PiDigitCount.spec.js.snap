@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PiDigitCount/> renders 1`] = `
+<div>
+  <div
+    class="m-3"
+  >
+    <h6
+      class="text-center mb-1"
+    >
+      Ocurrences
+    </h6>
+    <div
+      class=""
+    >
+      <div>
+        <div
+          class="fw-bold text-center"
+        >
+          0
+        </div>
+        <span
+          class="small text-center"
+        >
+          99,959
+        </span>
+      </div>
+      <div>
+        <div
+          class="fw-bold text-center"
+        >
+          1
+        </div>
+        <span
+          class="small text-center"
+        >
+          99,758
+        </span>
+      </div>
+      <div>
+        <div
+          class="fw-bold text-center"
+        >
+          2
+        </div>
+        <span
+          class="small text-center"
+        >
+          100,026
+        </span>
+      </div>
+      <div>
+        <div
+          class="fw-bold text-center"
+        >
+          3
+        </div>
+        <span
+          class="small text-center"
+        >
+          100,229
+        </span>
+      </div>
+      <div>
+        <div
+          class="fw-bold text-center"
+        >
+          4
+        </div>
+        <span
+          class="small text-center"
+        >
+          100,230
+        </span>
+      </div>
+      <div>
+        <div
+          class="fw-bold text-center"
+        >
+          5
+        </div>
+        <span
+          class="small text-center"
+        >
+          100,359
+        </span>
+      </div>
+      <div>
+        <div
+          class="fw-bold text-center"
+        >
+          6
+        </div>
+        <span
+          class="small text-center"
+        >
+          99,548
+        </span>
+      </div>
+      <div>
+        <div
+          class="fw-bold text-center"
+        >
+          7
+        </div>
+        <span
+          class="small text-center"
+        >
+          99,800
+        </span>
+      </div>
+      <div>
+        <div
+          class="fw-bold text-center"
+        >
+          8
+        </div>
+        <span
+          class="small text-center"
+        >
+          99,985
+        </span>
+      </div>
+      <div>
+        <div
+          class="fw-bold text-center"
+        >
+          9
+        </div>
+        <span
+          class="small text-center"
+        >
+          100,106
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

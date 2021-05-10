@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaletteSelector renders 1`] = `
+<div>
+  <div
+    class="d-flex flex-column"
+  >
+    <h6
+      class="text-center mb-2"
+    >
+      Color Presets
+    </h6>
+    <div
+      class="d-flex mb-3"
+    >
+      <select
+        class="form-select"
+        data-testid="palette-selector"
+      >
+        <option
+          value="regular"
+        >
+          regular
+        </option>
+        <option
+          value="pastel"
+        >
+          pastel
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+`;
